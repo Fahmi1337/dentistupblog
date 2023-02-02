@@ -28,14 +28,14 @@ const StepOne = ({ nextStep, handleFormData, values }) => {
         <Card.Body>
           <Form onSubmit={submitFormData} className="form my-1">
             <Form.Group className="mb-3">
-              <Form.Label>First Name</Form.Label>
+              <Form.Label>Patient Reference</Form.Label>
               <Form.Control
                 style={{ border: error ? "2px solid red" : "" }}
-                name="firstName"
-                defaultValue={values.firstName}
+                name="patientReference"
+                defaultValue={values.patientReference}
                 type="text"
-                placeholder="First Name"
-                onChange={handleFormData("firstName")}
+                placeholder="Patient #4561"
+                onChange={handleFormData("patientReference")}
               />
               {error ? (
                 <Form.Text style={{ color: "red" }}>
@@ -46,14 +46,48 @@ const StepOne = ({ nextStep, handleFormData, values }) => {
               )}
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Last Name</Form.Label>
+              <Form.Label>Date of birth</Form.Label>
               <Form.Control
                 style={{ border: error ? "2px solid red" : "" }}
-                name="lastName"
-                defaultValue={values.lastName}
-                type="text"
-                placeholder="Last Name"
-                onChange={handleFormData("lastName")}
+                name="dateOfBirth"
+                defaultValue={values.dateOfBirth}
+                type="date"
+                placeholder="Date of birth"
+                onChange={handleFormData("dateOfBirth")}
+              />
+              {error ? (
+                <Form.Text style={{ color: "red" }}>
+                  This is a required field
+                </Form.Text>
+              ) : (
+                ""
+              )}
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Male</Form.Label>
+              <Form.Control
+                style={{ border: error ? "2px solid red" : "" }}
+                name="gender"
+                defaultValue={values.gender}
+                type="radio"
+                onChange={handleFormData("gender")}
+              />
+              {error ? (
+                <Form.Text style={{ color: "red" }}>
+                  This is a required field
+                </Form.Text>
+              ) : (
+                ""
+              )}
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Female</Form.Label>
+              <Form.Control
+                style={{ border: error ? "2px solid red" : "" }}
+                name="gender"
+                defaultValue={values.gender}
+                type="radio"
+                onChange={handleFormData("gender")}
               />
               {error ? (
                 <Form.Text style={{ color: "red" }}>
