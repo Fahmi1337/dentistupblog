@@ -26,7 +26,7 @@ const StepOne = ({ nextStep, handleFormData, values }) => {
     <div>
       <Card style={{ marginTop: 100 }}>
         <Card.Body>
-          <Form onSubmit={submitFormData}>
+          <Form onSubmit={submitFormData} className="form my-1">
             <Form.Group className="mb-3">
               <Form.Label>First Name</Form.Label>
               <Form.Control
